@@ -45,7 +45,7 @@ def list():
         print(len(edges))
     return jsonify({"nodes": nodes, "edges": edges})
 
-@app.route("/prompt", methods=["POST"], mimetype='*/*')
+@app.route("/prompt", methods=["POST"])
 def prompt():
     data = request.json
     prompt = data.get("prompt", "")
