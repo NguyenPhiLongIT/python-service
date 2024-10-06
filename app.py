@@ -60,7 +60,7 @@ def prompt():
 
         print("Response: ", response)
         # return jsonify({"response": response.text})
-        return Response(response, mimetype='text/xml')
+        return Response(response, mimetype='application/json')
         
     except Exception as e:
         return jsonify({"error": "Request failed"}), 500
