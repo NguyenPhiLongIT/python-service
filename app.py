@@ -1,5 +1,5 @@
 import os 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from neo4j import GraphDatabase
 import marko
@@ -59,7 +59,8 @@ def prompt():
         response = model.generate_content(prompt)
 
         print("Response: ", response)
-        return jsonify({"response": response.text})
+        # return jsonify({"response": response.text})
+        return Response(response, mimetype='text/xml')
         
     except Exception as e:
         return jsonify({"error": "Request failed"}), 500
