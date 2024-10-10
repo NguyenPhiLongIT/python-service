@@ -3,3 +3,5 @@ marko
 neo4j
 Flask
 flask_cors
+PyPDF2
+python-docx
